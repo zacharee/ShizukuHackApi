@@ -73,7 +73,7 @@ public class ShizukuProvider extends ContentProvider {
 
     private static final String EXTRA_BINDER = "moe.shizuku.privileged.api.intent.extra.BINDER";
 
-    public static final String PERMISSION = "moe.shizuku.manager.permission.API_V23";
+    public static final String PERMISSION = "moe.shizuku.manager.permission.debug.API_V23";
 
     public static final String MANAGER_APPLICATION_ID = "moe.shizuku.privileged.api";
 
