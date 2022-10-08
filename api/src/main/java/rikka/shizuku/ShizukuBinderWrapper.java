@@ -4,6 +4,8 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
+import android.os.ResultReceiver;
+import android.os.ShellCallback;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -90,5 +92,10 @@ public class ShizukuBinderWrapper implements IBinder {
     @Override
     public boolean unlinkToDeath(@NonNull DeathRecipient recipient, int flags) {
         return original.unlinkToDeath(recipient, flags);
+    }
+
+    @Override
+    public void shellCommand(FileDescriptor in, FileDescriptor out, FileDescriptor err, String[] args, ShellCallback shellCallback, ResultReceiver resultReceiver) throws RemoteException {
+        original.shellCommand(in, out, err, args, shellCallback, resultReceiver);
     }
 }
